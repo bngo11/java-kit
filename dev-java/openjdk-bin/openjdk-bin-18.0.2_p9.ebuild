@@ -7,10 +7,10 @@ inherit java-vm-2
 DESCRIPTION="Prebuilt Java JDK binaries provided by Eclipse Temurin"
 HOMEPAGE="https://adoptium.net"
 SRC_URI="
-	amd64? ( https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.4%2B8/OpenJDK17U-jdk_x64_linux_hotspot_17.0.4_8.tar.gz -> OpenJDK17U-jdk_x64_linux_hotspot_17.0.4_8.tar.gz )
-	arm64? ( https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.4%2B8/OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.4_8.tar.gz -> OpenJDK17U-jdk_aarch64_linux_hotspot_17.0.4_8.tar.gz )
-	ppc64? ( https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.4%2B8/OpenJDK17U-jdk_ppc64le_linux_hotspot_17.0.4_8.tar.gz -> OpenJDK17U-jdk_ppc64le_linux_hotspot_17.0.4_8.tar.gz )
-	arm? ( https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.4%2B8/OpenJDK17U-jdk_arm_linux_hotspot_17.0.4_8.tar.gz -> OpenJDK17U-jdk_arm_linux_hotspot_17.0.4_8.tar.gz )"
+	amd64? ( https://github.com/adoptium/temurin18-binaries/releases/download/jdk-18.0.2%2B9/OpenJDK18U-jdk_x64_linux_hotspot_18.0.2_9.tar.gz -> OpenJDK18U-jdk_x64_linux_hotspot_18.0.2_9.tar.gz )
+	ppc64? ( https://github.com/adoptium/temurin18-binaries/releases/download/jdk-18.0.2%2B9/OpenJDK18U-jdk_ppc64le_linux_hotspot_18.0.2_9.tar.gz -> OpenJDK18U-jdk_ppc64le_linux_hotspot_18.0.2_9.tar.gz )
+	arm64? ( https://github.com/adoptium/temurin18-binaries/releases/download/jdk-18.0.2%2B9/OpenJDK18U-jdk_aarch64_linux_hotspot_18.0.2_9.tar.gz -> OpenJDK18U-jdk_aarch64_linux_hotspot_18.0.2_9.tar.gz )
+	arm? ( https://github.com/adoptium/temurin18-binaries/releases/download/jdk-18.0.2%2B9/OpenJDK18U-jdk_arm_linux_hotspot_18.0.2_9.tar.gz -> OpenJDK18U-jdk_arm_linux_hotspot_18.0.2_9.tar.gz )"
 
 LICENSE="GPL-2-with-classpath-exception"
 KEYWORDS="-* amd64 arm arm64 ppc64"
@@ -39,7 +39,7 @@ RDEPEND="
 RESTRICT="preserve-libs splitdebug"
 QA_PREBUILT="*"
 
-S="${WORKDIR}/jdk-17.0.4+8"
+S="${WORKDIR}/jdk-18.0.2+9"
 
 src_unpack() {
 	default
