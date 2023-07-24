@@ -7,11 +7,13 @@ inherit java-vm-2
 DESCRIPTION="Prebuilt Java JDK binaries provided by Eclipse Temurin"
 HOMEPAGE="https://adoptium.net"
 SRC_URI="
-	amd64? ( https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.1%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.1_9.tar.gz -> OpenJDK20U-jdk_x64_linux_hotspot_20.0.1_9.tar.gz )
-	arm64? ( https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.1%2B9/OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.1_9.tar.gz -> OpenJDK20U-jdk_aarch64_linux_hotspot_20.0.1_9.tar.gz )"
+	arm64? ( https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.20_8.tar.gz -> OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.20_8.tar.gz )
+	amd64? ( https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz -> OpenJDK11U-jdk_x64_linux_hotspot_11.0.20_8.tar.gz )
+	ppc64? ( https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.20_8.tar.gz -> OpenJDK11U-jdk_ppc64le_linux_hotspot_11.0.20_8.tar.gz )
+	arm? ( https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20%2B8/OpenJDK11U-jdk_arm_linux_hotspot_11.0.20_8.tar.gz -> OpenJDK11U-jdk_arm_linux_hotspot_11.0.20_8.tar.gz )"
 
 LICENSE="GPL-2-with-classpath-exception"
-KEYWORDS="-* amd64 arm64"
+KEYWORDS="-* amd64 arm arm64 ppc64"
 SLOT=$(ver_cut 1)
 IUSE="alsa cups headless-awt selinux source"
 
@@ -37,7 +39,7 @@ RDEPEND="
 RESTRICT="preserve-libs splitdebug"
 QA_PREBUILT="*"
 
-S="${WORKDIR}/jdk-20.0.1+9"
+S="${WORKDIR}/jdk-11.0.20+8"
 
 src_unpack() {
 	default
